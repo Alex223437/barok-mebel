@@ -1,0 +1,34 @@
+@import 'libs/olrosa';
+@import 'libs/swiper';
+@import 'base/variables';
+@import 'base/mixins';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #F3F3F3;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+.wrapper {
+    max-width: 1160px;
+    margin: 0 auto;
+}
+
+.section {
+    padding: 150px 0;
+}
+
+@import 'blocks/hero';
