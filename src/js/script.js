@@ -47,3 +47,108 @@ new MutationObserver(muts => {
     });
   }
 }).observe(document.documentElement, { childList: true, subtree: true });
+
+const HERO_SLIDES = [
+  'img/hero/slide-1.jpg',
+  'img/hero/slide-2.jpg',
+  'img/hero/slide-3.jpg',
+];
+const AUTOPLAY_MS = 8000;
+const FADE_MS = 700; // должен совпадать с CSS .7s
+
+// ====== рендер ======
+const stack = document.getElementById('heroBg');
+const bulletsWrap = document.getElementById('heroBullets');
+
+let idx = 0;
+let timer = null;
+let slides = [];
+let bullets = [];
+
+function createSlide(url, i){
+  const el = document.createElement('div');
+  el.className = 'hero-bg-slide';
+  el.style.backgroundImage = `url("${url}")`;
+  el.setAttribute('role','img');
+  el.setAttribute('aria-label', `Фон слайд ${i+1}`);
+  return el;
+}
+function createBullet(i){
+  const b = document.createElement('button');
+  b.type = 'button';
+  b.setAttribute('aria-label', `Перейти к слайду ${i+1}`);
+  b.addEventListener('click', () => goTo(i, true));
+  return b;
+}
+
+function render(){
+  HERO_SLIDES.forEach((url, i) => {
+    const s = createSlide(url, i);
+    stack.appendChild(s);
+    slides.push(s);
+
+    const b = createBullet(i);
+    bulletsWrap.appendChild(b);
+    bullets.push(b);
+  });
+}
+
+// ====== смена слайда ======
+let animating = false;
+function goTo(next, user=false){
+  if (animating || next === idx) return;
+  animating = true;
+
+  const cur = idx;
+  idx = (next + slides.length) % slides.length;
+
+  slides[cur].classList.remove('is-active');
+  slides[idx].classList.add('is-active');
+
+  bullets[cur].classList.remove('is-active');
+  bullets[idx].classList.add('is-active');
+
+  if (user) restartAutoplay();
+
+  setTimeout(() => { animating = false; }, FADE_MS);
+}
+function next(){ goTo(idx + 1); }
+
+// ====== автоплей ======
+function startAutoplay(){
+  stopAutoplay();
+  timer = setInterval(next, AUTOPLAY_MS);
+}
+function stopAutoplay(){
+  if (timer){ clearInterval(timer); timer = null; }
+}
+function restartAutoplay(){
+  stopAutoplay();
+  startAutoplay();
+}
+
+// const heroEl = document.querySelector('.hero');
+// heroEl.addEventListener('mouseenter', stopAutoplay);
+// heroEl.addEventListener('mouseleave', startAutoplay);
+
+// ====== предзагрузка и инициализация ======
+function preload(url){ return new Promise(res => { const i=new Image(); i.onload=i.onerror=()=>res(); i.src=url; }); }
+
+(async function initHeroBackground(){
+  if (!HERO_SLIDES.length) return;
+
+  render();
+
+  await Promise.all(HERO_SLIDES.map(preload));
+
+  slides[0].classList.add('is-active');
+  bullets[0].classList.add('is-active');
+
+  // старт
+  startAutoplay();
+
+  // ресайз — ничего особого, но если нужно можно тут что-то адаптивное
+  window.addEventListener('visibilitychange', () => {
+    if (document.hidden) stopAutoplay(); else startAutoplay();
+  });
+})();
