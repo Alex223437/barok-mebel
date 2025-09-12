@@ -152,3 +152,33 @@ function preload(url){ return new Promise(res => { const i=new Image(); i.onload
     if (document.hidden) stopAutoplay(); else startAutoplay();
   });
 })();
+
+document.addEventListener('DOMContentLoaded', () => {
+  const track = document.getElementById('partnersMarquee');
+  if (!track) return;
+
+  // 1) сохраним исходные элементы (один набор)
+  const base = Array.from(track.children);
+
+  // 2) клонируем набор хотя бы один раз (итого — два набора подряд)
+  function appendSet(){
+    base.forEach(node => track.appendChild(node.cloneNode(true)));
+  }
+  appendSet();
+
+  // 3) если ширина двух наборов всё ещё меньше ширины контейнера,
+  //    докидываем до тех пор, пока трек не станет шире в 2× контейнера.
+  const wrap = track.parentElement;
+  function ensureWidth(){
+    const need = wrap.clientWidth * 2;
+    while (track.scrollWidth < need) appendSet();
+  }
+  ensureWidth();
+
+  // 4) при ресайзе перепроверяем (на всякий, редкий кейс)
+  let to = null;
+  window.addEventListener('resize', () => {
+    clearTimeout(to);
+    to = setTimeout(ensureWidth, 150);
+  }, { passive: true });
+});
