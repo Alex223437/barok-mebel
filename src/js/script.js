@@ -182,3 +182,17 @@ document.addEventListener('DOMContentLoaded', () => {
     to = setTimeout(ensureWidth, 150);
   }, { passive: true });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const fileInput = document.querySelector('.calculation__file input[type="file"]');
+  const fileInfo = document.querySelector('.calculation__file-info');
+
+  fileInput.addEventListener('change', () => {
+    if (fileInput.files.length > 0) {
+      const fileName = fileInput.files[0].name;
+      fileInfo.innerHTML = `<span class="calculation__file-name">${fileName}</span>`;
+    } else {
+      fileInfo.innerHTML = `максимальный размер 100 МБ<br>допустимые типы файлов: jpg, pdf`;
+    }
+  });
+});

@@ -207,6 +207,24 @@
             </div>
         </div>
     </section>
+    <section class="calculation">
+        <div class="container">
+            <div class="calculation__inner">
+                <h2 class="title title-light calculation__title">Заказать расчет</h2>
+                <form action="#" method="POST" class="calculation__form">
+                    <input type="text" class="calculation__input" name="name" placeholder="Ваше имя" required>
+                    <input type="text" class="calculation__input" name="phone" placeholder="Ваш телефон" required>
+                    <textarea class="calculation__input calculation__textarea" name="comment" placeholder="Комментарий"></textarea>
+                    <label class="calculation__file">
+                        <span class="calculation__file-btn">Загрузить файл</span>
+                        <span class="calculation__file-info">максимальный размер 100 МБ<br>допустимые типы файлов: jpg, pdf</span>
+                        <input type="file" name="file">
+                    </label>
+                    <button type="submit" class="btn btn-primary calculation__btn">Заказать расчет</button>
+                </form>
+            </div>
+        </div>
+    </section>
     <script src="js/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
 </body> 

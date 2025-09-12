@@ -1,0 +1,81 @@
+.calculation {
+  background: linear-gradient(107deg, rgba(0, 0, 0, 0.45) 42.98%, rgba(0, 0, 0, 0.00) 61.75%), url('../img/calculation-bg.jpg') lightgray 50% / cover no-repeat;
+  & > .container {
+    display: grid;
+    grid-template-columns: 550px auto;
+  }
+  &__form {
+    display: flex;
+    margin-top: 30px;
+    flex-direction: column;
+    gap: 16px;
+  }
+  &__input {
+    --b: 2px;         
+    --r: 4px;         
+    padding: 20px 32px;
+    border: var(--b) solid transparent;   
+    border-radius: var(--r);
+    outline: none;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 140%;
+    color: var(--text-color-light);
+    background:
+      linear-gradient(rgba(180,172,163,0.70), rgba(180,172,163,0.70)) padding-box,
+      linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(180,172,163,0.70) 100%) border-box;
+    &::placeholder {
+      color: var(--text-color-light);
+      opacity: .7;
+    }
+  }
+  &__textarea {
+    height: 105px;
+    min-height: 105px;
+    max-height: 300px;
+    resize: vertical;
+  }
+  &__file {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    position: relative;
+
+    input[type="file"] {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      cursor: pointer;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__file-btn {
+    --b: 2px;         
+    --r: 4px;
+    border: var(--b) solid transparent;   
+    border-radius: var(--r);
+    padding: 8px 18px;
+    background: rgba(180,172,163,0.70);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: var(--text-color-light);
+    background:
+      linear-gradient(rgba(180,172,163,0.70), rgba(180,172,163,0.70)) padding-box,
+      linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(180,172,163,0.70) 100%) border-box;
+    
+  }
+
+  &__file-info, &__file-name {
+    font-size: 12px;
+    color: var(--text-color-light);
+    line-height: 24px; 
+  }
+  &__btn {
+    margin-top: 24px;
+    align-self: flex-end;
+  }
+}
