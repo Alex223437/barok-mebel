@@ -141,3 +141,20 @@
     
   }
 }
+
+@media (max-width: 1024px) {
+  .footer {
+    &__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px 20px;
+    }
+    &__callback {
+      grid-column: span 2;
+      align-items: flex-end;
+    }
+    &__form {
+      width: 100%;
+    }
+  }
+}
