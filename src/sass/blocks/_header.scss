@@ -64,3 +64,17 @@
   }
 
 }
+
+@media (max-width: 1024px) {
+  .header {
+    &__logo {
+      height: 64px;
+    }
+    &__menu {
+      &-link {
+        padding: 20px 10px;
+      }
+    }
+  }
+  
+}

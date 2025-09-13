@@ -43,5 +43,15 @@
       }
     }
   }
+}
 
+@media (max-width: 1024px) {
+  .services {
+    &__hash {
+      grid-template-columns: repeat(2, 150px);
+      grid-template-rows: repeat(2, 150px);
+      gap: 20px 40px;
+    }
+  }
+  
 }
