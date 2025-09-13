@@ -1,0 +1,87 @@
+.about {
+  background-color: #fff;
+  &__grid {
+    margin-top: 45px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: flex-start;
+  }
+  &__column {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  &__left {
+    border-right: 1px solid var(--accent-color);
+    padding-right: 16px;
+  }
+  &__right {
+    padding-left: 16px;
+  }
+  &__paragraph {
+    font-size: 18px;
+    line-height: 140%;
+    color: var(--text-color);
+  }
+
+  &__link {
+    margin-top: 45px;
+  }
+
+  &__partners {
+    position: relative;
+    margin-top: 50px;
+    height: 55px;
+    width: 100%;
+    border: 1px solid #E2F3EB;
+    box-shadow: 0 1px 3px 3px rgba(133,121,117,.16);
+    overflow: hidden;              
+    background: #fff; 
+  }
+  .partners-marquee{
+    display: flex;
+    align-items: center;
+    gap: 55px;                        /* твой зазор */
+    height: 100%;
+    will-change: transform;
+    animation: marquee-scroll 30s linear infinite alternate;
+  }
+  .about__partners:hover .partners-marquee{
+    animation-play-state: paused;     /* пауза по ховеру */
+  }
+
+  /* SVG нормируем по высоте контейнера */
+  .partners-marquee > svg{
+    height: auto;                     /* подгони под вкус */
+    width: 70px;
+    flex: 0 0 auto;
+    opacity: .9;
+  }
+
+  /* мягкие «маски» по краям, чтобы появлялись/исчезали деликатно (необязательно) */
+  .about__partners::before,
+  .about__partners::after{
+    content:"";
+    position:absolute; top:0; bottom:0; width:48px; pointer-events:none;
+    z-index:1;
+  }
+  .about__partners::before{
+    left:0;
+    background: linear-gradient(90deg,#fff 0%, rgba(255,255,255,0) 100%);
+  }
+  .about__partners::after{
+    right:0;
+    background: linear-gradient(270deg,#fff 0%, rgba(255,255,255,0) 100%);
+  }
+
+  /* бесконечный скролл: едем на половину ширины трека */
+  @keyframes marquee-scroll{
+    from{ transform: translateX(0); }
+    to  { transform: translateX(-50%); }
+  }
+
+  /* respect user's motion preferences */
+  @media (prefers-reduced-motion: reduce){
+    .partners-marquee{ animation: none; }
+  }
+}

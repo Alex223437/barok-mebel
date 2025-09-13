@@ -1,0 +1,106 @@
+.hero {
+  // background: linear-gradient(180deg, rgba(238, 232, 222, 0.56) 31.74%, rgba(238, 232, 222, 0.28) 71.77%), url('../img/hero-bg.jpg') lightgray 50% / cover no-repeat;
+  position: relative;
+  overflow: hidden;
+  padding: 190px 0 80px 0;
+  & > .container {
+    position: relative;
+    z-index: 2;
+  }
+  &__slogan {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    &-item {
+      font-size: 18px;
+      line-height: 120%;
+      letter-spacing: 2.16px;
+      text-transform: uppercase;
+    }
+  }
+  &__title {
+    position: relative;
+    margin-top: 24px;
+    text-align: center;
+    font-size: 54px;
+    font-weight: 400;
+  }
+  &__btns {
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  &__offer {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    padding: 25px 55px;
+    border-radius: 40px;
+    background: linear-gradient(91deg, rgba(255, 255, 255, 0.52) 1.71%, rgba(255, 255, 255, 0.35) 99.91%);
+    backdrop-filter: blur(5px);
+    &-item {
+      font-size: 18px;
+      line-height: 140%;
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+      white-space: normal;     
+      word-break: break-word;  
+      max-width: 215px;        
+      gap: 24px;
+      &::before {
+        content: '';
+        display: block;
+        width: 2px;
+        height: 38px;
+        background-color: var(--accent-color);
+      }
+    }
+  }
+  &-bg-stack{
+    position:absolute; inset:0; z-index:1;
+    pointer-events:none; /* фон некликабельный */
+  }
+  &-bg-slide{
+    position:absolute; inset:0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity .7s ease;
+    will-change: opacity;
+    &.is-active{ opacity: 1; }
+    &::before{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(238,232,222,.56) 31.74%, rgba(238,232,222,.28) 71.77%);
+    }
+  }
+  &__pagination{
+    position:absolute;
+    right: 45px;
+    top: 50%;
+    transform:translateY(-50%);
+    display:flex;
+    gap:20px;
+    flex-direction: column;
+    align-items: center;
+    z-index:3;
+    button{
+      width:12px;
+      height:12px;
+      border-radius:999px;
+      border:0;
+      background: var(--accent-color);
+      cursor:pointer;
+      transition: all .25s ease;
+      padding:0;
+      &.is-active { background:#2A5742;}
+      &:focus-visible{ outline:2px solid #6FB187; }
+    }
+  } 
+}

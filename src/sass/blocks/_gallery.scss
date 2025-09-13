@@ -1,0 +1,28 @@
+.gallery {
+  background: var(--vanila-bg);
+  &__description {
+    margin-top: 24px;
+    font-size: 18px;
+    line-height: 140%;
+  }
+  &__grid {
+    margin-top: 34px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 16px 20px;
+    &-item { 
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      &:first-child {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+    }
+  }
+  &__link {
+    justify-self: flex-end;
+    margin: 40px 60px 0 0;
+  }
+}

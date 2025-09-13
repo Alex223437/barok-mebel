@@ -1,0 +1,66 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  backdrop-filter: blur(5px);
+  & > .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+  &__logo {
+    height: 84px;
+    width: auto;
+    &-img {
+      height: 100%;
+      width: auto;
+      object-fit: contain;
+    }
+  }
+  &__menu {
+    &-list {
+      display: flex;
+      list-style-type: none;
+    }
+    &-link {
+      display: block;
+      padding: 30px 15px;
+      font-size: 15px;
+      line-height: 24px;
+      transition: all 0.3s ease;
+      &:hover {
+        color: var(--text-color-light);
+        background-color: var(--accent-color);
+      }
+    }
+  }
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    &-time {
+      font-size: 12px;
+      line-height: 24px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      &::before {
+        content: '';
+        display: block;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: var(--accent-color);
+      }
+    }
+    &-phone {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px; 
+    }
+  }
+
+}
