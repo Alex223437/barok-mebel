@@ -15,7 +15,7 @@
     <header class="header">
         <div class="container">
             <a href="#" class="header__logo">
-                <img src="" alt="Барок">
+                <img src="icons/logo.png" alt="Барок" class="header__logo-img">
             </a> 
             <nav class="header__menu">
                 <ul class="header__menu-list">
@@ -225,6 +225,56 @@
             </div>
         </div>
     </section>
+    <footer class="footer">
+        <div class="container footer__grid">
+            <a class="footer__logo" href="/">
+                <img src="icons/logo.png" alt="БАРОК" class="footer__logo-img">
+            </a>
+            <nav class="footer__nav" aria-labelledby="footer-info">
+                <h3 id="footer-info" class="footer__title">Информация</h3>
+                <ul class="footer__list">
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">Наши проекты</a></li>
+                    <li><a href="#">Сотрудничество</a></li>
+                    <li><a href="#">Доставка и сборка</a></li>
+                </ul>
+            </nav>
+            <div class="footer__contacts" aria-labelledby="footer-contacts">
+                <h3 id="footer-contacts" class="footer__title">Контакты</h3>
+                <ul class="footer__list footer__list--contacts">
+                    <li><a href="tel:+375295844236">+375 (29) 584-42-36</a></li>
+                    <li>г. Гродно, ул. Белуша 4</li>
+                    <li><a href="mailto:barok.mebel.grodno@gmail.com">barok.mebel.grodno@gmail.com</a></li>
+                </ul>
+            </div>
+            <div class="footer__up">
+                <span>Наверх!</span>
+                <button class="btn btn-secondary footer__to-top" type="button" aria-label="Наверх">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M6.44881 4.72414L2.36104 8.68965C2.10262 8.94253 1.77936 9.07494 1.39125 9.08689C1.00315 9.09885 0.668609 8.96643 0.387633 8.68965C0.129211 8.43678 0 8.11494 0 7.72414C0 7.33333 0.129211 7.01149 0.387633 6.75862L6.87169 0.413793C7.1536 0.137931 7.4825 0 7.85839 0C8.23428 0 8.56318 0.137931 8.8451 0.413793L15.3291 6.75862C15.5876 7.01149 15.7229 7.32781 15.7351 7.70758C15.7473 8.08735 15.612 8.41471 15.3291 8.68965C15.0707 8.94253 14.7418 9.06896 14.3424 9.06896C13.9431 9.06896 13.6142 8.94253 13.3557 8.68965L9.26797 4.72414V14.6207C9.26797 15.0115 9.13265 15.3393 8.86201 15.6041C8.59137 15.869 8.25683 16.0009 7.85839 16C7.45901 16 7.124 15.8676 6.85336 15.6028C6.58272 15.3379 6.44788 15.0106 6.44881 14.6207V4.72414Z" fill="currentColor"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="footer__callback" aria-labelledby="footer-callback">
+                <h3 id="footer-callback" class="footer__title">Заказать звонок</h3>
+                <form class="footer__form" action="#" method="post" novalidate>
+                    <label class="footer__field">
+                        <input class="footer__input" type="text" name="name" placeholder="Имя" required>
+                    </label>
+                    <label class="footer__field">
+                        <input class="footer__input" type="tel" name="phone" placeholder="Телефон" required>
+                    </label>
+                    <button class="btn btn-primary footer__submit" type="submit">Отправить</button>
+                </form>
+            </div>
+        </div>
+        <div class="container">
+            <div class="footer__legal">
+                <p>© БАРОК 2025</p>
+                <a href="#" class="link footer__policy">Политика в отношении персональных данных</a>
+            </div>
+        </div>
+    </footer>
     <script src="js/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
 </body> 

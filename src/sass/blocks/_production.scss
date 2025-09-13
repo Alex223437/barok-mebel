@@ -1,5 +1,5 @@
 .production {
-  background: linear-gradient(180deg, rgba(238, 232, 222, 0.25) 24.36%, #EEE8DE 100%);
+  background: linear-gradient(180deg, rgba(238, 232, 222, 0.25) 24.36%, var(--vanila-bg) 100%);
   &__item {
     position: relative;
     overflow: hidden;

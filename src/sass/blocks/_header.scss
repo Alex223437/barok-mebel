@@ -11,6 +11,15 @@
     align-items: center;
     height: 100%;
   }
+  &__logo {
+    height: 84px;
+    width: auto;
+    &-img {
+      height: 100%;
+      width: auto;
+      object-fit: contain;
+    }
+  }
   &__menu {
     &-list {
       display: flex;

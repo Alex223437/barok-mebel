@@ -196,3 +196,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.querySelector('.footer__to-top');
+    if (!btn) return;
+
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Появление кнопки только после прокрутки
+    const toggle = () => btn.style.opacity = window.scrollY > 200 ? '1' : '.6';
+    toggle();
+    window.addEventListener('scroll', toggle, { passive:true });
+  });
