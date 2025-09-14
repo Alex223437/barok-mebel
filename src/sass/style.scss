@@ -89,6 +89,25 @@ section {
     padding: 80px 0;
 }
 
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    .title {
+        font-size: 28px;
+    }
+    .link {
+        font-size: 12px;
+        &::after {
+            height: 1px;
+        }
+    }
+    section {
+        padding: 40px 0;
+    }
+    
+}
+
 @import 'blocks/header';
 @import 'blocks/hero';
 @import 'blocks/about';
