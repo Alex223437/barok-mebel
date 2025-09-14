@@ -85,3 +85,31 @@
     .partners-marquee{ animation: none; }
   }
 }
+
+
+@media (max-width: 768px) {
+  .about {
+    padding-bottom: 0;
+    &__grid {
+      margin-top: 30px;
+    }
+    &__column {
+      gap: 12px;
+    }
+    &__paragraph {
+      font-size: 12px;
+    }
+    &__left {
+      padding-right: 8px;
+    }
+    &__right {
+      padding-left: 8px;
+    }
+    &__link {
+      margin-top: 30px;
+    }
+    &__partners {
+      margin-top: 30px;
+    }
+  }
+}

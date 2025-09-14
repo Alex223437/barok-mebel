@@ -54,3 +54,24 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .btn {
+    text-align: center;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 200% */
+    letter-spacing: 0.42px;
+    padding: 8px 24px;
+    &::after {
+      display: none;
+    }
+    &:hover {
+      text-shadow: none;
+      --dx: 0;
+      --dy: 0;
+    }
+  }
+  
+}

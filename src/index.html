@@ -32,11 +32,29 @@
                     <li class="header__menu-item"><a href="#" class="header__menu-link">Сотрудничество</a></li>
                     <li class="header__menu-item"><a href="#" class="header__menu-link">Контакты</a></li>
                 </ul>
+                <div class="header__contacts mobile">
+                    <span class="header__contacts-time">Вт-Вс: с 10:00 до 15:00</span>
+                    <a href="tel:+375295844236" class="header__contacts-phone">+375 (29) 584-42-36</a>
+                </div>
+                <button class="header__close mobile">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <line x1="4.92969" y1="19.0711" x2="19.0711" y2="4.92969" stroke="#1F1F1F" stroke-width="2"/>
+                        <line x1="4.92896" y1="4.92871" x2="19.0704" y2="19.0701" stroke="#1F1F1F" stroke-width="2"/>
+                    </svg>
+                </button>
            </nav>
-           <div class="header__contacts">
+           <div class="header__overlay mobile"></div>
+           <div class="header__contacts desktop">
                 <span class="header__contacts-time">Вт-Вс: с 10:00 до 15:00</span>
                 <a href="tel:+375295844236" class="header__contacts-phone">+375 (29) 584-42-36</a>
            </div>
+           <button class="header__burger">
+            <svg xmlns="http://www.w3.org/2000/svg" width="37" height="26" viewBox="0 0 37 26" fill="none">
+                <line x1="22.8652" y1="9.05646" x2="35.9845" y2="16.3286" stroke="#334A3F" stroke-width="2"/>
+                <line x1="2.9062" y1="3.6646" x2="33.5179" y2="20.6329" stroke="#334A3F" stroke-width="2"/>
+                <line x1="0.629829" y1="7.96857" x2="13.7491" y2="15.2407" stroke="#334A3F" stroke-width="2"/>
+            </svg>
+           </button>
         </div>
     </header>
     <main class="hero">
@@ -282,6 +300,6 @@
         </div>
     </footer>
     <script src="js/swiper-bundle.min.js"></script>
-    <script src="js/script.js"></script>
+    <script type="module" src="js/script.js"></script>
 </body> 
 </html>
