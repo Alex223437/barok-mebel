@@ -39,6 +39,8 @@ body {
     font-weight: 400;
 }
 
+html.no-scroll, body.no-scroll { overflow: hidden; }
+
 a {
     text-decoration: none;
 }
