@@ -80,3 +80,26 @@
     align-self: flex-end;
   }
 }
+
+
+@media (max-width: 768px) {
+  .calculation {
+    & > .container {
+      grid-template-columns: 1fr;
+    }
+    &__input, &__textarea {
+      font-size: 14px;
+      padding: 12px 20px;
+    }
+    &__file {
+      &-btn {
+        font-size: 12px;
+        padding: 8px 12px;
+        line-height: 18px;
+      }
+    }
+    &__btn {
+      margin-top: 10px;
+    }
+  }
+}

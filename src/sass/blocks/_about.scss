@@ -112,4 +112,14 @@
       margin-top: 30px;
     }
   }
+
+  @keyframes marquee-scroll{
+    from{ transform: translateX(0); }
+    to  { transform: translateX(-100%); }  /* едем на четверть ширины трека */
+    
+  }
+  .partners-marquee {
+    gap: 30px;                        /* уменьшаем зазор */
+    animation: marquee-scroll 20s linear infinite alternate;
+  }
 }
