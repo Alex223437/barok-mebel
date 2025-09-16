@@ -12,7 +12,7 @@
     gap: 16px;
   }
   &__left {
-    border-right: 1px solid var(--accent-color);
+    border-right: 1px solid var(--accent-color-dark);
     padding-right: 16px;
   }
   &__right {
@@ -56,6 +56,9 @@
     width: 70px;
     flex: 0 0 auto;
     opacity: .9;
+    path {
+      color: var(--accent-color-dark);
+    }
   }
 
   /* мягкие «маски» по краям, чтобы появлялись/исчезали деликатно (необязательно) */

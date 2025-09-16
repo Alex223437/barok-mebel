@@ -77,9 +77,9 @@ a {
         transition: all 0.3s ease;
     }
     &:hover {
-        color: var(--accent-color);
+        color: var(--accent-color-dark);
         &::after {
-            background-color: var(--accent-color);
+            background-color: var(--accent-color-dark);
             width: 100%;
         }
     }

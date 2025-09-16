@@ -36,7 +36,7 @@
         background: rgba(180, 172, 163, 0.80);
       }
       .production__item-label {
-        color: #334A3F;
+        color: var(--accent-color);
       }
       .production__btn {
         opacity: 1;
@@ -54,6 +54,9 @@
     }
     &-icon {
       display: none;
+      path {
+        color: var(--accent-color);
+      }
     }
   }
   &__grid {

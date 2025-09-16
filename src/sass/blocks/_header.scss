@@ -53,7 +53,7 @@
         width: 5px;
         height: 5px;
         border-radius: 50%;
-        background-color: var(--accent-color);
+        background-color: var(--accent-color-dark);
       }
     }
     &-phone {
@@ -68,6 +68,11 @@
     background: none;
     cursor: pointer;
     outline: none;
+    svg {
+      line {
+        stroke: var(--accent-color);
+      }
+    }
   }
   .mobile {
     display: none;
