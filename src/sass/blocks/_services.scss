@@ -40,6 +40,9 @@
         height: 100%;
         width: auto;
         object-fit: contain;
+        path {
+          color: var(--accent-color-dark);
+        }
       }
     }
   }
